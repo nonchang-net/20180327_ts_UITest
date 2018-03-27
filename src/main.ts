@@ -94,7 +94,7 @@ class Main{
 // Styler
 // 検討中: 
 // - jQueryのようにメソッドチェーンするCSS設定ユーティリティにできると嬉しい。
-// - CSSは「目的」に対して「決まった記述のセット」が多いように感じたため。
+// - CSSは「目的」に対して「決まった記述のセット」が多いように感じたため作成。
 
 // 利用例
 // - `const canvas = new Styler("canvas").fullWindow().appendTo(body).getElement()`
