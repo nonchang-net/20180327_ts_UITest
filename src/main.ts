@@ -46,14 +46,19 @@ class Main{
 		body.appendChild(canvas)
 		this.renderCanvas2d(canvas.getContext('2d'))
 
-		const ui = new Styler("div").fullWindow().appendTo(body)
+		const ui = new Styler("div").fullWindow().appendTo(body).getElement()
+
+		console.log(ui)
 	
 		const button = new Styler("button")
 			.bg(255,255,255,0.7)
 			.text("testButton")
 			.size(100,100)
 			.abs().r(0).b(0)
-			.appendToStyler(ui)
+			.appendTo(ui)
+			.getElement()
+
+		button.onclick = ()=>{ console.log("testtest") }
 
 
 
@@ -172,10 +177,10 @@ class Styler<T extends keyof HTMLElementTagNameMap>{
 		return this
 	}
 
-	appendToStyler(styler: any): Styler<T>{
-		styler.appendTo(this.elm)
-		return this
-	}
+	// appendToStyler(styler: any): Styler<T>{
+	// 	styler.appendTo(this.elm)
+	// 	return this
+	// }
 
 	getElement(): HTMLElementTagNameMap[T]{
 		return this.elm
