@@ -1,19 +1,15 @@
 /*
 
 - シンプルなtweenクラス
-	- TweenLiteを参考にTypeScriptに移植
-	- あれ？TweenLiteじゃないか？
-		- https://greensock.com/tweenlite
-		- http://www.babylonjs-playground.com/#5UZNC#1
-		- 明らかに違う……。
+	- メモ: tween関数はjquery.easingを参考。GSGDのBSD Licenseに準拠します。
 
-	- あ、simple tweenか。
+	- Simple Tweenを参考に再実装中。
 		- https://npm.runkit.com/simple-tween/tween.js?t=1522335794218
 
 
 ## 概要メモ
 
-- Flash時代からあるfunctionが揃ってる感じ。
+- Flash時代からよくみたeasing functionが揃ってた。
 - 改造してよくわからなくなってきたので、使いそうなtween functionだけ残してあとは自前で設計し直す方向で。
 
 */
@@ -31,6 +27,11 @@ interface Properties {
 }
 
 export default class Tween {
+
+	//メモ: tween関数はjquery.easingを参考。GSGDのBSD Licenseに準拠します。
+	// > http://easings.net/ja
+	// > http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js
+	// > Open source under the BSD License. 
 
 	private static easeInQuad(t, b, c, d): number {
 		return c * (t /= d) * t + b;
